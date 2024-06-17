@@ -1,16 +1,25 @@
 <main>
     <div class="main-section">
-        <img src="/assets/svg/Logo.svg" alt="">
-        <h1>{{title}}</h1>
-        <ng-content></ng-content>
-        <div class="btn-wrapper">
-            <button class="btn-primary">{{primaryBtnText}}</button>
-            <div class="divider">
-                <div></div>
-                <span>or</span>
-                <div></div>
+        <div class="container">
+
+            <img src="/assets/svg/Logo.svg" alt="">
+            <h1>{{title}}</h1>
+            <ng-content></ng-content>
+            <div class="btn-wrapper">
+                <button 
+                    class="btn-primary" 
+                    (click)="submit()"
+                    [disabled]="disablePrimaryButton"
+                >
+                    {{primaryBtnText}}
+                </button>
+                <div class="divider">
+                    <div></div>
+                    <span>or</span>
+                    <div></div>
+                </div>
+                <button class="btn-secondary" (click)="navigate()">{{secondaryBtnText}}</button>
             </div>
-            <button class="btn-secondary">{{secondaryBtnText}}</button>
         </div>
     </div>
 </main>
